@@ -9,7 +9,7 @@ puts 'destroying database'
 Movie.destroy_all
 List.destroy_all
 puts 'creating database'
-json_films = JSON.parse(URI.open('http://tmdb.lewagon.com/movie/top_rated').read)
+json_films = JSON.parse(URI.open('http://tmdb.lewagon.com/movie/popular').read)
 json_films['results'].each do |film|
   Movie.create!(
     title: film['title'],
